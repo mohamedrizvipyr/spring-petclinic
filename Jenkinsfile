@@ -41,24 +41,13 @@ pipeline {
           }
 
            
-            
-stage ('success')
-	{
-            steps 
-		{
-                script 
-		      {
-			currentBuild.result = 'SUCCESS'
-               	       }
-          	}
-       	
-    post {
+post {
         failure {
             script {
                 currentBuild.result = 'FAILURE'
 	           }
         	}
-	}
+	
         
 	always {
             step([$class: 'Mailer',
