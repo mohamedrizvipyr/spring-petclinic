@@ -40,19 +40,20 @@ pipeline {
                  }
           }
 
-     }      
+           
             
+stage ('success')
+		{
+            steps 
+			{
+                script 
+				{
+			
+                    		currentBuild.result = 'SUCCESS'
+               			 }
+           		 }
+        	}
     
-
-
-stage ('success'){
-            steps {
-                script {
-                    currentBuild.result = 'SUCCESS'
-                }
-            }
-        }
-    }
 
     post {
         failure {
@@ -60,7 +61,7 @@ stage ('success'){
                 currentBuild.result = 'FAILURE'
             }
         }
-
+i
         always {
             step([$class: 'Mailer',
                 notifyEveryUnstableBuild: true,
