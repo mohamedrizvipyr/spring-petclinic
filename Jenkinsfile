@@ -43,31 +43,31 @@ pipeline {
            
             
 stage ('success')
-		{
+	{
             steps 
-			{
+		{
                 script 
-				{
-			
-                    		currentBuild.result = 'SUCCESS'
-               			 }
-           		 }
-        	}
+		      {
+			currentBuild.result = 'SUCCESS'
+               	       }
+          	}
+       	}
     
 
     post {
         failure {
             script {
                 currentBuild.result = 'FAILURE'
-            }
-        }
-i
-        always {
+	           }
+        	}
+	}
+        
+	always {
             step([$class: 'Mailer',
                 notifyEveryUnstableBuild: true,
                 recipients: "mohamedrizvikkl@gmail.com,rizvi",
                 sendToIndividuals: true])
-        }
+        	}
     }
 }
 
