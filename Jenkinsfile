@@ -51,9 +51,7 @@ stage ('success')
 			currentBuild.result = 'SUCCESS'
                	       }
           	}
-       	}
-    
-
+       	
     post {
         failure {
             script {
@@ -68,6 +66,7 @@ stage ('success')
                 recipients: "mohamedrizvikkl@gmail.com,rizvi",
                 sendToIndividuals: true])
         	}
-    }
+   	 }
+	}
 }
 
