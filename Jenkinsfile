@@ -7,7 +7,7 @@ environment
                 {
                 NEXUS_VERSION = "NEXUS 3"
                 NEXUS_PROTOCOL = "http"
-                NEXUS_URL = "http://65.1.91.8:8081/"
+                NEXUS_URL = "65.1.91.8:8081"
                 NEXUS_REPOSITORY = "petclinic"
                 NEXUS_CREDENTIAL_ID = "nexus_credentials"
                 }
